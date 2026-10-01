@@ -1,0 +1,128 @@
+
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background-color: #f5f7fa;
+  color: #222;
+}
+
+
+html[dir="rtl"] body {
+  text-align: right;
+}
+
+
+.hero {
+  background: linear-gradient(135deg, #0068b5, #0a84d0);
+  color: #fff;
+}
+
+.hero-logo {
+  max-width: 140px;
+  height: auto;
+}
+
+.hero-text {
+  max-width: 700px;
+}
+
+
+.timeline-card {
+  background-color: #ffffff;
+  border-radius: 12px;
+  border: 1px solid #e0e4ea;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.timeline-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.12);
+}
+
+.year {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #0068b5;
+}
+
+.title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+}
+
+
+.section-heading {
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+}
+
+.learn-btn {
+  margin-top: 0.75rem;
+  font-weight: 600;
+}
+
+.learn-btn.btn-primary {
+  background-color: #0068b5;
+  border-color: #0068b5;
+}
+
+.learn-btn.btn-primary:hover {
+  background-color: #005493;
+  border-color: #005493;
+}
+
+
+.bg-dark {
+  background-color: #111827 !important;
+}
+
+.bg-dark .form-control {
+  background-color: #1f2937;
+  border-color: #374151;
+  color: #f9fafb;
+}
+
+.bg-dark .form-control:focus {
+  background-color: #111827;
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 0.2rem rgba(59, 130, 246, 0.35);
+}
+
+.bg-dark .btn-primary {
+  background-color: #3b82f6;
+  border-color: #3b82f6;
+}
+
+.bg-dark .btn-primary:hover {
+  background-color: #2563eb;
+  border-color: #2563eb;
+}
+
+
+footer {
+  font-size: 0.95rem;
+}
+
+
+a:focus,
+button:focus,
+input:focus {
+  outline: 2px solid #3b82f6;
+  outline-offset: 2px;
+}
+
+
+@media (max-width: 768px) {
+  .hero {
+    padding: 3rem 1.5rem !important;
+  }
+
+  .hero h1 {
+    font-size: 1.9rem;
+  }
+
+  .hero .lead {
+    font-size: 1rem;
+  }
+}
