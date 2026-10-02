@@ -5,13 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Intel: Sustainability Through the Ages</title>
 
-  <!-- Bootstrap -->
+  <!-- Bootstrap CSS -->
   <link
     href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
     rel="stylesheet"
   />
 
-  <!-- Icons -->
+  <!-- Bootstrap Icons -->
   <link
     href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css"
     rel="stylesheet"
@@ -19,12 +19,12 @@
 
   <link rel="stylesheet" href="style.css" />
 
-  <!-- Auto-detect RTL -->
+  <!-- Auto RTL on load -->
   <script>
     document.addEventListener("DOMContentLoaded", () => {
-      const lang = document.documentElement.lang;
-      if (lang.startsWith("ar") || lang.startsWith("he") || lang.startsWith("fa")) {
-        document.documentElement.setAttribute("dir", "rtl");
+      const html = document.documentElement;
+      if (html.lang.startsWith("ar")) {
+        html.dir = "rtl";
       }
     });
   </script>
@@ -32,100 +32,154 @@
 
 <body>
 
-  <!-- Header -->
+  <!-- HERO -->
   <header class="hero text-center py-5">
     <div class="container">
       <img src="img/intel-header-logo.svg" alt="Intel Logo" class="hero-logo mb-3" />
-      <h1 class="mb-3">Sustainability Through the Ages</h1>
-      <p class="lead mx-auto hero-text">
-        Explore Intel's journey through time, discovering how innovation drives a more sustainable future.
+
+      <h1 id="title" class="mb-3">Sustainability Through the Ages</h1>
+
+      <p id="heroText" class="lead mx-auto hero-text">
+        Explore Intel's journey through time, discovering how our commitment
+        to innovation has shaped a more sustainable future.
       </p>
+
+      <!-- Controls -->
+      <div class="mt-4">
+        <button id="darkToggle" class="btn btn-outline-light">🌙 Dark Mode</button>
+        <button id="langSwitch" class="btn btn-outline-light ms-2">AR</button>
+      </div>
     </div>
   </header>
 
-  <!-- Timeline Section -->
+  <!-- TIMELINE -->
   <section class="py-5">
     <div class="container">
       <div class="row g-4">
 
-        <!-- Example Card -->
+        <!-- Card 1 -->
         <div class="col-md-6 col-lg-4">
           <article class="timeline-card p-4 h-100">
-            <h2 class="year">1968</h2>
-            <h3 class="title">Intel Founded</h3>
+            <h2 id="card1Year" class="year">1968</h2>
+            <h3 id="card1Title" class="title">Intel Founded</h3>
             <img src="img/1.jpg" alt="Intel founders" class="img-fluid rounded mb-3" />
-            <p>
-              Robert Noyce and Gordon Moore rename NM Electronics to Intel Corporation,
-              laying the foundation for decades of innovation.
+            <p id="card1Text">
+              Robert Noyce and Gordon Moore rename NM Electronics to Intel Corporation.
             </p>
           </article>
         </div>
 
-        <!-- Repeat your other timeline cards here... -->
+        <!-- Card 2 -->
+        <div class="col-md-6 col-lg-4">
+          <article class="timeline-card p-4 h-100">
+            <h2 class="year">1971</h2>
+            <h3 class="title">First Microprocessor</h3>
+            <img src="img/2.jpg" alt="Intel 4004" class="img-fluid rounded mb-3" />
+            <p>
+              Intel debuts the 4004, the world's first commercial microprocessor.
+            </p>
+          </article>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="col-md-6 col-lg-4">
+          <article class="timeline-card p-4 h-100">
+            <h2 class="year">1978</h2>
+            <h3 class="title">8086 Processor</h3>
+            <img src="img/3.jpg" alt="Intel 8086" class="img-fluid rounded mb-3" />
+            <p>
+              Launch of the 8086 processor, establishing the x86 architecture.
+            </p>
+          </article>
+        </div>
 
       </div>
     </div>
   </section>
 
-  <!-- Responsive Three-Column Section -->
+  <!-- CAROUSEL -->
+  <section class="container my-5">
+    <div id="intelCarousel" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-inner">
+
+        <div class="carousel-item active">
+          <img src="img/1.jpg" class="d-block w-100" alt="Intel 1968" />
+          <div class="carousel-caption d-none d-md-block">
+            <h5>1968 — Intel Founded</h5>
+          </div>
+        </div>
+
+        <div class="carousel-item">
+          <img src="img/3.jpg" class="d-block w-100" alt="Intel 8086" />
+          <div class="carousel-caption d-none d-md-block">
+            <h5>1978 — 8086 Processor</h5>
+          </div>
+        </div>
+
+        <div class="carousel-item">
+          <img src="img/4.jpg" class="d-block w-100" alt="Intel 386" />
+          <div class="carousel-caption d-none d-md-block">
+            <h5>1985 — 386 Processor</h5>
+          </div>
+        </div>
+
+      </div>
+
+      <button class="carousel-control-prev" type="button" data-bs-target="#intelCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon"></span>
+      </button>
+
+      <button class="carousel-control-next" type="button" data-bs-target="#intelCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon"></span>
+      </button>
+    </div>
+  </section>
+
+  <!-- THREE-COLUMN SECTION -->
   <section class="py-5 bg-light">
     <div class="container">
       <h2 class="text-center mb-4">Explore More</h2>
 
       <div class="row g-4 text-center">
 
-        <div class="col-lg-4 col-md-6">
-          <h3>
-            <i class="bi bi-cpu-fill"></i> RISE Strategy
-          </h3>
-          <p>
-            Intel’s RISE strategy drives progress in climate action, water stewardship, and waste reduction.
-          </p>
+        <div class="col-md-4">
+          <h3><i class="bi bi-cpu-fill"></i> RISE Strategy</h3>
+          <p>Intel’s RISE strategy drives progress in climate action and sustainability.</p>
           <a class="btn btn-primary learn-btn">Learn More</a>
         </div>
 
-        <div class="col-lg-4 col-md-6">
-          <h3>
-            <i class="bi bi-lightning-charge-fill"></i> Commitment
-          </h3>
-          <p>
-            Intel aims for net-zero greenhouse gas emissions (Scope 1 & 2) by 2040.
-          </p>
+        <div class="col-md-4">
+          <h3><i class="bi bi-lightning-charge-fill"></i> Commitment</h3>
+          <p>Intel aims for net-zero greenhouse gas emissions by 2040.</p>
           <a class="btn btn-primary learn-btn">Learn More</a>
         </div>
 
-        <div class="col-lg-4 col-md-6">
-          <h3>
-            <i class="bi bi-droplet-fill"></i> Water & Waste
-          </h3>
-          <p>
-            Intel conserves water, restores watersheds, and advances circular economy practices.
-          </p>
+        <div class="col-md-4">
+          <h3><i class="bi bi-droplet-fill"></i> Water & Waste</h3>
+          <p>Intel conserves water and advances circular economy practices.</p>
           <a class="btn btn-primary learn-btn">Learn More</a>
         </div>
 
       </div>
+
+      <div class="text-center mt-4">
+        <button class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#intelModal">
+          Learn About Intel’s Sustainability
+        </button>
+      </div>
     </div>
   </section>
 
-  <!-- Subscription Form -->
+  <!-- SUBSCRIPTION FORM -->
   <section class="py-5 bg-dark text-white">
     <div class="container">
       <h2 class="mb-3">Subscribe to our Sustainability Newsletter</h2>
 
-      <form class="row g-3" aria-label="Sustainability newsletter subscription form">
+      <form class="row g-3">
         <div class="col-md-8">
-          <label for="email" class="form-label">Email Address</label>
-          <input
-            id="email"
-            type="email"
-            class="form-control"
-            required
-            aria-describedby="emailHelp"
-          />
-          <div id="emailHelp" class="form-text text-light">
-            We will never share your email with anyone.
-          </div>
+          <label for="email" class="form-label">Email address</label>
+          <input type="email" id="email" class="form-control" required />
+          <div class="form-text text-light">We never share your email.</div>
         </div>
 
         <div class="col-md-4 d-flex align-items-end">
@@ -135,15 +189,94 @@
     </div>
   </section>
 
-  <!-- Footer -->
+  <!-- FOOTER -->
   <footer class="text-center py-3 bg-secondary text-white">
     <p>© 2024 Intel Sustainability Timeline</p>
   </footer>
 
+  <!-- MODAL -->
+  <div class="modal fade" id="intelModal" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+
+        <div class="modal-header">
+          <h5 class="modal-title">Intel Sustainability</h5>
+          <button class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+
+        <div class="modal-body">
+          Intel invests in renewable energy, water restoration, waste reduction,
+          and sustainable semiconductor manufacturing across global operations.
+        </div>
+
+        <div class="modal-footer">
+          <button class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
   <!-- Bootstrap JS -->
-  <script
-    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
-  ></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- DARK MODE + LANGUAGE TRANSLATION -->
+  <script>
+    
+    /* DARK MODE */
+    const darkToggle = document.getElementById("darkToggle");
+    darkToggle.addEventListener("click", () => {
+      document.body.classList.toggle("dark-mode");
+      darkToggle.textContent =
+        document.body.classList.contains("dark-mode")
+          ? "☀️ Light Mode"
+          : "🌙 Dark Mode";
+    });
+
+    /* TRANSLATION DICTIONARY */
+    const translations = {
+      title: {
+        en: "Sustainability Through the Ages",
+        ar: "الاستدامة عبر العصور"
+      },
+      heroText: {
+        en: "Explore Intel's journey through time, discovering how our commitment to innovation has shaped a more sustainable future.",
+        ar: "اكتشف رحلة إنتل عبر الزمن، وكيف ساهم التزامها بالابتكار في تشكيل مستقبل أكثر استدامة."
+      },
+      card1Year: { en: "1968", ar: "١٩٦٨" },
+      card1Title: { en: "Intel Founded", ar: "تأسيس شركة إنتل" },
+      card1Text: {
+        en: "Robert Noyce and Gordon Moore rename NM Electronics to Intel Corporation.",
+        ar: "قام روبرت نويس وغوردون مور بإعادة تسمية شركة NM Electronics إلى شركة إنتل."
+      }
+    };
+
+    function applyTranslations(lang) {
+      for (const id in translations) {
+        const el = document.getElementById(id);
+        if (el) el.textContent = translations[id][lang];
+      }
+    }
+
+    /* LANGUAGE SWITCHER */
+    const langSwitch = document.getElementById("langSwitch");
+
+    langSwitch.addEventListener("click", () => {
+      const html = document.documentElement;
+
+      if (html.lang === "en") {
+        html.lang = "ar";
+        html.dir = "rtl";
+        langSwitch.textContent = "EN";
+        applyTranslations("ar");
+      } else {
+        html.lang = "en";
+        html.dir = "ltr";
+        langSwitch.textContent = "AR";
+        applyTranslations("en");
+      }
+    });
+  </script>
 
 </body>
 </html>

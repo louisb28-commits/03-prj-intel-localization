@@ -3,6 +3,7 @@ body {
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   background-color: #f5f7fa;
   color: #222;
+  transition: background-color 0.4s ease, color 0.4s ease;
 }
 
 /* RTL support */
@@ -14,6 +15,7 @@ html[dir="rtl"] body {
 .hero {
   background: linear-gradient(135deg, #0068b5, #0a84d0);
   color: #fff;
+  transition: background 0.4s ease;
 }
 
 .hero-logo {
@@ -26,10 +28,10 @@ html[dir="rtl"] body {
 
 /* Timeline cards */
 .timeline-card {
-  background: #fff;
+  background-color: #ffffff;
   border-radius: 12px;
   border: 1px solid #e0e4ea;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.4s ease;
 }
 
 .timeline-card:hover {
@@ -52,6 +54,7 @@ html[dir="rtl"] body {
 .learn-btn {
   margin-top: 0.75rem;
   font-weight: 600;
+  transition: background-color 0.3s ease;
 }
 
 .learn-btn.btn-primary {
@@ -63,18 +66,32 @@ html[dir="rtl"] body {
   background-color: #005493;
 }
 
+/* Icons spacing */
+h3 i {
+  font-size: 1.3rem;
+  margin-inline-end: 0.4rem;
+}
+
+html[dir="rtl"] h3 i {
+  margin-inline-end: 0;
+  margin-inline-start: 0.4rem;
+}
+
 /* Subscription section */
 .bg-dark {
   background-color: #111827 !important;
+  transition: background-color 0.4s ease;
 }
 
 .bg-dark .form-control {
   background-color: #1f2937;
   border-color: #374151;
   color: #f9fafb;
+  transition: background-color 0.4s ease, border-color 0.4s ease;
 }
 
 .bg-dark .form-control:focus {
+  background-color: #111827;
   border-color: #3b82f6;
   box-shadow: 0 0 0 0.2rem rgba(59, 130, 246, 0.35);
 }
@@ -91,12 +108,76 @@ html[dir="rtl"] body {
 /* Footer */
 footer {
   font-size: 0.95rem;
+  transition: background-color 0.4s ease;
 }
 
-/* Accessibility focus */
+/* Carousel caption */
+.carousel-caption h5 {
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
+}
+
+/* Modal */
+.modal-content {
+  border-radius: 12px;
+}
+
+/* Dark mode */
+.dark-mode {
+  background-color: #0d1117 !important;
+  color: #e6edf3 !important;
+}
+
+.dark-mode .timeline-card {
+  background-color: #161b22 !important;
+  border-color: #30363d !important;
+}
+
+.dark-mode .hero {
+  background: linear-gradient(135deg, #003b66, #005a99) !important;
+}
+
+.dark-mode footer {
+  background-color: #30363d !important;
+}
+
+.dark-mode .bg-light {
+  background-color: #111827 !important;
+  color: #e6edf3 !important;
+}
+
+/* Focus styles (accessibility) */
 a:focus,
 button:focus,
 input:focus {
   outline: 2px solid #3b82f6;
   outline-offset: 2px;
+}
+
+/* Smooth fade-in animation */
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.6s forwards;
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive tweaks */
+@media (max-width: 768px) {
+  .hero {
+    padding: 3rem 1.5rem !important;
+  }
+
+  .hero h1 {
+    font-size: 1.9rem;
+  }
+
+  .hero .lead {
+    font-size: 1rem;
+  }
 }
